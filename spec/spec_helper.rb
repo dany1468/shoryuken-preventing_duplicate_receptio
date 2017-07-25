@@ -1,5 +1,7 @@
-require "bundler/setup"
-require "shoryuken/preventing_duplicate_reception"
+require 'bundler/setup'
+
+require 'shoryuken'
+require 'shoryuken/preventing_duplicate_reception'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
