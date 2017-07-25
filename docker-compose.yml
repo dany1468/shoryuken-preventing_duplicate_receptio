@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  dynamodb:
+    image: cnadiminti/dynamodb-local
+    ports:
+      - "8000:8000"
+  app:
+    build: .
+    volumes:
+      - ".:/app:cached"
+    depends_on:
+      - dynamodb
+    environment:
+      BUNDLE_PATH: "vendor/bundle"
+      BUNDLE_JOBS: 2
+      AWS_ACCESS_KEY_ID: "test"
+      AWS_SECRET_ACCESS_KEY: "test"
+
